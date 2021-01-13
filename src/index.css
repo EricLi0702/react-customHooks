@@ -37,12 +37,17 @@ h1 {
 .book h1 {
   margin-top: 0.5rem;
 }
-.book img {
+/* .book img {
   width: 200px;
   height: 200px;
-}
+} */
+
 .book h4 {
   color: #617d98;
   font-size: 0.75rem;
   margin-top: 0.25rem;
+}
+
+.book p {
+  margin-top: 0.5rem;
 }

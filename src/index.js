@@ -1,28 +1,46 @@
 import React from "react";
 import ReactDom from "react-dom";
 import "./index.css";
-
-const author = "Amelia Hepworth";
-const title = "I Love You to the Moon and Back";
-const img = "http://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/img/car_3.png";
+const books = [
+  {
+    img:"https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
+    author:"Amelia Hepworth",
+    title:"I Love You to the Moon and Back",
+  },
+  {
+    img:"https://images-na.ssl-images-amazon.com/images/I/51NYjNgldSL._SX330_BO1,204,203,200_.jpg",
+    author:"Delia Owens",
+    title:"Where the Crawdads Sing"
+  },
+  {
+    img:"https://images-na.ssl-images-amazon.com/images/I/81Cf61prqrL._AC_UL200_SR200,200_.jpg",
+    author:"Shannon Roberts",
+    title:"Prayer Journal for Women: 52 Week Scripture,…"
+  }
+]
+// const names = ['john', 'peter', 'sussan']
 function BookList() {
+  
   return (
     <section className="bookList">
-      {/* <Person></Person>
-      <Message></Message> */}
-      <Book></Book>
+      {books.map((book)=> {
+        return(
+          <Book
+            book={book}
+          ></Book>
+        );
+      })}
     </section>
   )
 }
 
 const Book = (props) => {
-  console.log(props)
+  const {img,title,author} = props.book
   return (
     <article className="book">
       <img src={img} alt=""></img>
       <h1>{title}</h1>  
-      <h4>{author.toUpperCase()}</h4>
-      {console.log(props)}
+      <h4>{author}</h4>
     </article>
   )
 }
